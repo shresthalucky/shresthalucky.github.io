@@ -1,0 +1,86 @@
+.basic {
+  @extend .clearfix;
+
+  @include e(left) {
+    float: none;
+    width: 100%;
+
+    @include mq(md) {
+      float: left;
+      width: calc(100% - 400px);
+    }
+  }
+
+  @include e(right) {
+    float: none;
+    width: 100%;
+
+    @include mq(md) {
+      float: right;
+      width: 400px;
+    }
+  }
+
+  @include e(image) {
+    border-radius: 50%;
+    overflow: hidden;
+    height: 300px;
+    width: 300px;
+    margin: 0 auto;
+
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+.card {
+  @extend .overlay;
+  line-height: 1.5;
+  margin-top: 30px;
+
+  @include mq(md) {
+    margin: 0;
+  }
+}
+
+.detail {
+  span {
+    vertical-align: middle;
+    margin-right: 14px;
+  }
+
+  @include e(name) {
+    font-weight: 700;
+    font-size: map-get($head, h1);
+    font-family: $font-family-secondary;
+    margin-bottom: 30px;
+  }
+
+  @include e(username) {
+    a {
+      text-decoration: none;
+    }
+  }
+
+  @include e(follow) {
+    margin-top: 30px;
+  }
+
+  @include e(number) {
+    font-size: map-get($head, h1);
+  }
+
+  @include e(following) {
+    float: left;
+    text-align: center;
+    font-weight: 700;
+    margin-right: 30px;
+  }
+
+  @include e(followers) {
+    float: left;
+    text-align: center;
+    font-weight: 700;
+  }
+}

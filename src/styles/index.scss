@@ -6,6 +6,7 @@
 @import "../components/Nav/Nav.scss";
 @import "../components/Button/Button.scss";
 @import "../components/Repo/Repo.scss";
+@import "../views/layouts/Home/Home.scss";
 
 .content {
   margin: 40px 0;
@@ -16,7 +17,8 @@
   padding: 12px 30px;
   border-radius: 6px;
 
-  &:focus, &:active {
+  &:focus,
+  &:active {
     outline: none;
     border: 1px solid $secondary-light;
     background-color: $secondary-light;
@@ -26,5 +28,35 @@
     background-color: $secondary-dark;
     border: 1px solid $secondary-dark;
     color: $text-color;
+  }
+}
+
+.outer-wrapper {
+  display: table;
+  height: 100vh;
+  width: 100%;
+
+  @include e(cell) {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+.loading {
+  @extend .overlay;
+  font-size: 40px;
+  width: 200px;
+  text-align: center;
+  margin: 0 auto;
+
+  p {
+    margin-top: 10px;
+    font-size: map-get($head, h3);
+  }
+
+  @include e(spinner) {
+    -webkit-animation: spin 2s linear infinite;
+    -moz-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
   }
 }

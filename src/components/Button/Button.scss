@@ -29,7 +29,7 @@
         background-color: $secondary-light;
         color: $text-color;
       }
-  
+
       &:active {
         background-color: darken($primary-dark, 1%);
         color: $text-color;
@@ -39,41 +39,29 @@
 
   @include m(purple) {
     background-color: $purple-dark;
-    border: 1px solid $secondary-dark;
+    border: 1px solid $purple-dark;
     color: $primary-dark;
 
-    &:enabled {
-      &:hover {
-        background-color: $secondary-light;
-        color: $text-color;
-      }
-  
-      &:active {
-        background-color: darken($primary-dark, 1%);
-        color: $text-color;
-      }
+    &:hover {
+      background-color: $purple-light;
+    }
+
+    &:active {
+      background-color: $purple-dark;
     }
   }
 
   @include m(blue) {
     background-color: $blue-dark;
-    border: 1px solid $secondary-dark;
+    border: 1px solid $blue-dark;
     color: $primary-dark;
 
-    &:enabled {
-      &:hover {
-        background-color: $blue-light;
-        color: $text-color;
-      }
-  
-      &:active {
-        background-color: darken($primary-dark, 1%);
-        color: $text-color;
-      }
+    &:hover {
+      background-color: $blue-light;
     }
-  }
 
-  &:disabled {
-    cursor: auto;
+    &:active {
+      background-color: $blue-dark;
+    }
   }
 }
