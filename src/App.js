@@ -1,26 +1,48 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Routes from './routes';
+import Http from './utils/http';
+import { setUser } from './actions/userActions';
+import { setRepos } from './actions/reposActions';
+class App extends React.Component {
+
+  componentDidMount() {
+    Http.getUser().then(data => {
+      this.props.setUser(data);
+    });
+
+    Http.getRepos().then(data => {
+      this.props.setRepos(data);
+    });
+  }
+
+  render() {
+    return (
+      <Routes />
+    );
+  }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    user: state.user,
+    repos: state.repos
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    setUser: (user) => dispatch(setUser(user)),
+    setRepos: (repos) => dispatch(setRepos(repos))
+  };
+};
+
+App.propTypes = {
+  setUser: PropTypes.func.isRequired,
+  setRepos: PropTypes.func.isRequired
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
+
