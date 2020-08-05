@@ -1,0 +1,36 @@
+.container {
+  padding: 0 15px;
+  max-width: 100%;
+  margin: 0 auto;
+
+  @include mq(md) {
+    max-width: $md-device;
+  }
+
+  @include mq(lg) {
+    max-width: $lg-device;
+  }
+
+  @include mq(xl) {
+    max-width: $xl-device;
+    padding: 0 200px;
+  }
+}
+
+.clearfix {
+  &:after {
+    display: table;
+    content: "";
+    clear: both;
+  }
+}
+
+.float {
+  @include m(left) {
+    float: left;
+  }
+
+  @include m(right) {
+    float: right;
+  }
+}

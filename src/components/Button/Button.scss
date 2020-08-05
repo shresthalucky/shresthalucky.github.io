@@ -1,0 +1,79 @@
+.btn {
+  padding: 12px 30px;
+  border-radius: 6px;
+  font-family: $font-family-primary;
+  font-size: $default-font-size;
+  color: $text-color-dark;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 0 6px;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @include m(primary) {
+    background-color: $secondary-dark;
+    border: 1px solid $secondary-dark;
+
+    &:enabled {
+      &:hover {
+        background-color: $secondary-light;
+        color: $text-color;
+      }
+  
+      &:active {
+        background-color: darken($primary-dark, 1%);
+        color: $text-color;
+      }
+    }
+  }
+
+  @include m(purple) {
+    background-color: $purple-dark;
+    border: 1px solid $secondary-dark;
+    color: $primary-dark;
+
+    &:enabled {
+      &:hover {
+        background-color: $secondary-light;
+        color: $text-color;
+      }
+  
+      &:active {
+        background-color: darken($primary-dark, 1%);
+        color: $text-color;
+      }
+    }
+  }
+
+  @include m(blue) {
+    background-color: $blue-dark;
+    border: 1px solid $secondary-dark;
+    color: $primary-dark;
+
+    &:enabled {
+      &:hover {
+        background-color: $blue-light;
+        color: $text-color;
+      }
+  
+      &:active {
+        background-color: darken($primary-dark, 1%);
+        color: $text-color;
+      }
+    }
+  }
+
+  &:disabled {
+    cursor: auto;
+  }
+}

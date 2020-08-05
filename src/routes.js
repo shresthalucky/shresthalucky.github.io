@@ -8,7 +8,7 @@ function Routes() {
   return(
     <Router>
       <Route exact path="/" component={HomeWrapper} />
-      <Route exact path="/repo" component={ReposWrapper} />
+      <Route exact path="/repos" component={ReposWrapper} />
     </Router>
   );
 }

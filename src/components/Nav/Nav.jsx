@@ -7,7 +7,7 @@ function Nav() {
     <nav>
       <ul>
         <li><Link to="/">Home</Link></li>
-        <li><Link to="/repo">Repo</Link></li>
+        <li><Link to="/repos">Repo</Link></li>
       </ul>
     </nav>
   );

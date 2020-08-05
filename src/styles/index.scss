@@ -1,0 +1,25 @@
+@import "./partials/config";
+@import "./partials/mixins";
+@import "./partials/reset";
+@import "./partials/helpers";
+
+@import "../components/Button/Button.scss";
+@import "../components/Repo/Repo.scss";
+
+.input {
+  width: 100%;
+  padding: 12px 30px;
+  border-radius: 6px;
+
+  &:focus, &:active {
+    outline: none;
+    border: 1px solid $secondary-light;
+    background-color: $secondary-light;
+  }
+
+  @include m(primary) {
+    background-color: $secondary-dark;
+    border: 1px solid $secondary-dark;
+    color: $text-color;
+  }
+}

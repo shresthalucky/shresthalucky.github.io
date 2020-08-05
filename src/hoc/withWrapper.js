@@ -7,8 +7,10 @@ function withWrapper(Component) {
 
     return (
       <div className="main-wrapper">
-        <Nav />
-        <Component {...props} />
+        <div className="container">
+          <Nav />
+          <Component {...props} />
+        </div>
       </div>
     );
   }
