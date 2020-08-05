@@ -84,6 +84,8 @@ $blue-light: lighten(map-get($gruvbox-palette, gruvbox-bright_blue), 10%);
 $purple-dark: map-get($gruvbox-palette, gruvbox-neutral_purple);
 $purple-light: lighten(map-get($gruvbox-palette, gruvbox-neutral_purple), 10%);
 
+$light: map-get($gruvbox-palette, gruvbox-light3);
+
 //Breakpoints
 $sm-device: 540px;
 $md-device: 720px;

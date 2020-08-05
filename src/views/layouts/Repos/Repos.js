@@ -29,14 +29,14 @@ class Repos extends React.Component {
 
     return (
       <div>
-        
+
         <div>
           <input
             type="text"
             onChange={this.changeHandler}
             value={this.state.searchText}
             placeholder="Search"
-             className="input input--primary" />
+            className="input input--primary" />
         </div>
 
         {reposList.map(repo => <Repo detail={repo} key={repo.id} />)}

@@ -1,14 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 
 function Nav() {
   return (
-    <nav>
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/repos">Repo</Link></li>
-      </ul>
+    <nav className="nav">
+      <NavLink exact to="/" className="nav__link">Home</NavLink>
+      <NavLink exact to="/repos" className="nav__link">Repos</NavLink>
     </nav>
   );
 }

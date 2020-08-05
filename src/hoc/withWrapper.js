@@ -9,7 +9,9 @@ function withWrapper(Component) {
       <div className="main-wrapper">
         <div className="container">
           <Nav />
-          <Component {...props} />
+          <main className="content">
+            <Component {...props} />
+          </main>
         </div>
       </div>
     );

@@ -1,0 +1,36 @@
+.nav {
+
+  margin-top: 40px;
+
+  @include e(link) {
+    padding: 12px 40px;
+    background-color: $secondary-dark;
+    border: 1px solid $secondary-dark;
+    border-radius: 30px;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: map-get($head, h3);
+    display: inline-block;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      background-color: $secondary-light;
+      border: 1px solid $secondary-light;
+    }
+
+    &.active {
+      background-color: $link-color;
+      border: 1px solid $link-color;
+      color: $primary-dark;
+    }
+  }
+
+}
