@@ -17,8 +17,8 @@ function Repo({ detail }) {
       </p>
 
       <div className="clearfix">
-        <Button type="link" to={detail.html_url} color="blue">Code</Button>
-        {detail.homepage && <Button type="link" to={detail.homepage} color="purple">Demo</Button>}
+        <Button type="link" to={detail.html_url} kind="blue">Code</Button>
+        {detail.homepage && <Button type="link" to={detail.homepage} kind="purple">Demo</Button>}
       </div>
     </div>
   );

@@ -36,8 +36,8 @@
 }
 
 .overlay {
-  background-color: $secondary-dark;
-  border: 1px solid $secondary-dark;
+  background-color: var(--foreground);
+  border: 1px solid var(--foreground);
   padding: 30px;
   border-radius: 6px;
   width: 100%;

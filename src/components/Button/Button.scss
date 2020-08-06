@@ -3,7 +3,6 @@
   border-radius: 6px;
   font-family: $font-family-primary;
   font-size: $default-font-size;
-  color: $text-color-dark;
   text-decoration: none;
   cursor: pointer;
   margin: 0 6px;
@@ -21,47 +20,63 @@
   }
 
   @include m(primary) {
-    background-color: $secondary-dark;
-    border: 1px solid $secondary-dark;
+    background-color: var(--foreground);
+    border: 1px solid var(--foreground);
 
     &:enabled {
       &:hover {
-        background-color: $secondary-light;
-        color: $text-color;
+        background-color: var(--secondary);
+        color: var(--text);
       }
 
       &:active {
-        background-color: darken($primary-dark, 1%);
-        color: $text-color;
+        background-color: var(--background);
+        color: var(--text);
       }
     }
   }
 
   @include m(purple) {
-    background-color: $purple-dark;
-    border: 1px solid $purple-dark;
-    color: $primary-dark;
+    background-color: var(--purple);
+    border: 1px solid var(--purple);
+    color: var(--background);
 
     &:hover {
-      background-color: $purple-light;
+      background-color: var(--purple-light);
     }
 
     &:active {
-      background-color: $purple-dark;
+      background-color: var(--purple);
     }
   }
 
   @include m(blue) {
-    background-color: $blue-dark;
-    border: 1px solid $blue-dark;
-    color: $primary-dark;
+    background-color: var(--blue);
+    border: 1px solid var(--blue);
+    color: var(--background);
 
     &:hover {
-      background-color: $blue-light;
+      background-color: var(--blue-light);
     }
 
     &:active {
-      background-color: $blue-dark;
+      background-color: var(--blue);
+    }
+  }
+
+  @include m(round-icon) {
+    border-radius: 50%;
+    height: $default-font-size + 33px;
+    width: $default-font-size + 33px;
+    padding: 0;
+    background-color: var(--foreground);
+    border: 1px solid var(--foreground);
+    color: var(--link);
+    line-height: $default-font-size;
+
+    &:hover {
+      background-color: var(--secondary);
+      border: 1px solid var(--secondary);
     }
   }
 }

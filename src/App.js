@@ -23,6 +23,8 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    document.body.className = this.props.theme;
+
     Http.getUser().then(data => {
       this.props.setUser(data);
     })
@@ -53,6 +55,11 @@ class App extends React.Component {
       });
   }
 
+  componentDidUpdate() {
+    localStorage.setItem('theme', this.props.theme);
+    document.body.className = this.props.theme;
+  }
+
   render() {
     return (
       <EnhancedRoutes
@@ -64,8 +71,7 @@ class App extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    user: state.user,
-    repos: state.repos
+    theme: state.theme
   };
 };
 
@@ -77,6 +83,7 @@ const mapDispatchToProps = dispatch => {
 };
 
 App.propTypes = {
+  theme: PropTypes.string,
   setUser: PropTypes.func.isRequired,
   setRepos: PropTypes.func.isRequired
 };

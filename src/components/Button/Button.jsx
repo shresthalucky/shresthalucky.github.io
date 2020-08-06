@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function Button(props) {
 
-  const btnClass = props.color ? `btn--${props.color}` : '';
+  const btnClass = props.kind ? `btn--${props.kind}` : '';
 
   switch (props.type) {
     case 'link':
@@ -12,7 +12,7 @@ function Button(props) {
       );
     default:
       return (
-        <Button onClick={props.clickHandler} className={`btn ${btnClass}`}>{props.children}</Button>
+        <button onClick={props.clickHandler} className={`btn ${btnClass}`}>{props.children}</button>
       );
   }
 }
@@ -21,8 +21,8 @@ Button.propTypes = {
   type: PropTypes.string,
   to: PropTypes.string,
   clickHandler: PropTypes.func,
-  children: PropTypes.string,
-  color: PropTypes.string
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  kind: PropTypes.string
 };
 
 export default Button;

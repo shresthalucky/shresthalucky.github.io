@@ -4,14 +4,38 @@
   box-sizing: border-box;
 }
 
+body.light {
+  --background: #{theme-get(light, background)};
+  --foreground: #{theme-get(light, foreground)};
+  --secondary: #{theme-get(light, secondary)};
+  --text: #{theme-get(light, text)};
+  --link: #{theme-get(light, link)};
+  --blue: #{theme-get(light, blue)};
+  --blue-light: #{theme-get(light, blue-light)};
+  --purple: #{theme-get(light, purple)};
+  --purple-light: #{theme-get(light, purple-light)};
+}
+
+body.dark {
+  --background: #{theme-get(dark, background)};
+  --foreground: #{theme-get(dark, foreground)};
+  --secondary: #{theme-get(dark, secondary)};
+  --text: #{theme-get(dark, text)};
+  --link: #{theme-get(dark, link)};
+  --blue: #{theme-get(dark, blue)};
+  --blue-light: #{theme-get(dark, blue-light)};
+  --purple: #{theme-get(dark, purple)};
+  --purple-light: #{theme-get(dark, purple-light)};
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: $font-family-primary;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: $primary-dark;
-  color: $text-color;
+  background-color: var(--background);
+  color: var(--text);
   font-size: $default-font-size;
 }
 
@@ -38,7 +62,7 @@ h4 {
 }
 
 a {
-  color: $link-color;
+  color: var(--link);
 }
 
 input {

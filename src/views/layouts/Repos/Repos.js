@@ -23,7 +23,7 @@ class Repos extends React.Component {
   render() {
 
     const reposList = this.props.repos.filter(repo => {
-      if (repo.name.includes(this.state.searchText)) return true;
+      if (repo.name.toLowerCase().includes(this.state.searchText.toLowerCase())) return true;
       return false;
     })
 

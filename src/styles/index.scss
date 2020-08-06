@@ -20,14 +20,14 @@
   &:focus,
   &:active {
     outline: none;
-    border: 1px solid $secondary-light;
-    background-color: $secondary-light;
+    border: 1px solid var(--secondary);
+    background-color: var(--secondary);
   }
 
   @include m(primary) {
-    background-color: $secondary-dark;
-    border: 1px solid $secondary-dark;
-    color: $text-color;
+    background-color: var(--foreground);
+    border: 1px solid var(--foreground);
+    color: var(--text);
   }
 }
 

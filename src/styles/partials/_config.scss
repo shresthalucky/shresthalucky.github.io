@@ -69,25 +69,39 @@ $gruvbox-palette: (
 $white: #FFFFFF;
 $black: #000000;
 
-$primary-dark: map-get($gruvbox-palette, gruvbox-dark0_hard);
-$secondary-dark: map-get($gruvbox-palette, gruvbox-dark0);
-$secondary-light: map-get($gruvbox-palette, gruvbox-dark0_soft);
-$text-color: map-get($gruvbox-palette, gruvbox-light0);
-$text-color-dark: map-get($gruvbox-palette, gruvbox-light4);
-$link-color: map-get($gruvbox-palette, gruvbox-neutral_aqua);
-$info-color: map-get($gruvbox-palette, gruvbox-light4);
-$title-color: map-get($gruvbox-palette, gruvbox-bright_yellow);
+$themes: (
+  dark: (
+    background: map-get($gruvbox-palette, gruvbox-dark0_hard),
+    foreground: map-get($gruvbox-palette, gruvbox-dark0),
+    secondary: map-get($gruvbox-palette, gruvbox-dark0_soft),
+    text: map-get($gruvbox-palette, gruvbox-light0),
+    link: map-get($gruvbox-palette, gruvbox-neutral_aqua),
+    blue: map-get($gruvbox-palette, gruvbox-bright_blue),
+    blue-light: lighten(map-get($gruvbox-palette, gruvbox-bright_blue), 10%),
+    purple: map-get($gruvbox-palette, gruvbox-neutral_purple),
+    purple-light: lighten(map-get($gruvbox-palette, gruvbox-neutral_purple), 10%)
 
-$blue-dark: map-get($gruvbox-palette, gruvbox-bright_blue);
-$blue-light: lighten(map-get($gruvbox-palette, gruvbox-bright_blue), 10%);
-
-$purple-dark: map-get($gruvbox-palette, gruvbox-neutral_purple);
-$purple-light: lighten(map-get($gruvbox-palette, gruvbox-neutral_purple), 10%);
-
-$light: map-get($gruvbox-palette, gruvbox-light3);
+  ),
+  light: (
+    background: map-get($gruvbox-palette, gruvbox-light0_hard),
+    foreground: map-get($gruvbox-palette, gruvbox-light0),
+    secondary: map-get($gruvbox-palette, gruvbox-light0_soft),
+    text: map-get($gruvbox-palette, gruvbox-dark_blue),
+    link: map-get($gruvbox-palette, gruvbox-neutral_red),
+    blue: map-get($gruvbox-palette, gruvbox-bright_blue),
+    blue-light: lighten(map-get($gruvbox-palette, gruvbox-bright_blue), 10%),
+    purple: map-get($gruvbox-palette, gruvbox-neutral_purple),
+    purple-light: lighten(map-get($gruvbox-palette, gruvbox-neutral_purple), 10%)
+  )
+);
 
 //Breakpoints
 $sm-device: 540px;
 $md-device: 720px;
 $lg-device: 960px;
 $xl-device: 1400px;
+
+@function theme-get($theme-name, $color) {
+  $map: map-get($themes, $theme-name);
+  @return map-get($map, $color);
+}
