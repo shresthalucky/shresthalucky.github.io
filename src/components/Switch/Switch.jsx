@@ -8,10 +8,10 @@ import Button from '../Button';
 
 function Switch(props) {
 
-  const icon = props.theme === 'dark' ? <RiMoonLine /> : <RiSunLine/>; 
-
   return (
-    <Button kind="round-icon" clickHandler={props.toggleTheme}>{icon}</Button>
+    <Button kind="round-icon" clickHandler={props.toggleTheme}>
+      {props.theme === 'dark' ? <RiSunLine /> : <RiMoonLine />}
+    </Button>
   );
 }
 
